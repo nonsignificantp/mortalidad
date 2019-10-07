@@ -1,0 +1,7 @@
+md5: ec97a6f17b5b63b23d629edf53cc9af5
+outs:
+- md5: e13d7140c50641f6b05cc0acddd0000b
+  path: hi_internacion.csv
+  cache: true
+  metric: false
+  persist: false

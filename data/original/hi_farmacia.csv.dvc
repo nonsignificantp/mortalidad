@@ -1,0 +1,7 @@
+md5: 243b69efaafe0b61753757454caf59ea
+outs:
+- md5: 3b79c77365ea8f5b7a88996af5d58308
+  path: hi_farmacia.csv
+  cache: true
+  metric: false
+  persist: false
