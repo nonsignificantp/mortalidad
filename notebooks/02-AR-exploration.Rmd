@@ -1,0 +1,50 @@
+```{r message=FALSE}
+library('tidyverse')
+```
+
+## Load datasets
+
+```{r message=FALSE}
+input_farmacia_csv <- file.path('data', 'stable', 'farmacia.csv')
+farmacia <- read_csv(input_farmacia_csv)
+
+input_internacion_csv <- file.path('data', 'stable', 'internacion.csv')
+internacion <- read_csv(input_internacion_csv)
+
+input_historial_csv <- file.path('data', 'stable', 'historial.csv')
+historial <- read_csv(input_historial_csv)
+```
+
+## Farmacia
+
+```{r}
+farmacia %>% 
+  select(-paciente_id)
+```
+
+
+```{r}
+farmacia %>% 
+  select(-paciente_id) %>% 
+  summarise_all(mean)
+```
+
+## Internacion
+
+```{r}
+internacion %>% 
+  select(-paciente_id)
+```
+
+```{r}
+internacion %>% 
+  select(-paciente_id) %>% 
+  summarise_all(mean)
+```
+
+## Historial
+
+```{r}
+historial %>% 
+  select(-paciente_id)
+```
