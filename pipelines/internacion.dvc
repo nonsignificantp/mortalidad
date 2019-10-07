@@ -1,0 +1,14 @@
+md5: e195ec9e8c038fd3501d6869be4f9730
+cmd: Rscript src/preprocessing/internacion.R
+wdir: ..
+deps:
+- md5: e13d7140c50641f6b05cc0acddd0000b
+  path: data/original/hi_internacion.csv
+- md5: 3bee70cdb84de21218aa9cd2a1e096d3
+  path: src/preprocessing/internacion.R
+outs:
+- md5: 69ea6208096fa6cf36bbf3e84c9a7e32
+  path: data/stable/internacion.csv
+  cache: true
+  metric: false
+  persist: false

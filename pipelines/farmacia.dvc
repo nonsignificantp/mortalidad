@@ -1,0 +1,14 @@
+md5: 6bc2c7e46e51a6c55fbd9f6eafe2ed0b
+cmd: Rscript src/preprocessing/farmacia.R
+wdir: ..
+deps:
+- md5: 3b79c77365ea8f5b7a88996af5d58308
+  path: data/original/hi_farmacia.csv
+- md5: f3febc77a0fac7bf5672a861079666fe
+  path: src/preprocessing/farmacia.R
+outs:
+- md5: 3b79c77365ea8f5b7a88996af5d58308
+  path: data/stable/farmacia.csv
+  cache: true
+  metric: false
+  persist: false

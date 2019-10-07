@@ -1,0 +1,29 @@
+md5: ef337c318b51a77cd2a9d4ad95b557ee
+cmd: Rscript src/features/status.R
+wdir: ..
+deps:
+- md5: 69ea6208096fa6cf36bbf3e84c9a7e32
+  path: data/stable/internacion.csv
+- md5: 5a67e429c5a45011f4a1548437d1387b
+  path: src/features/status.R
+outs:
+- md5: 44a2040d1b09a38a18d5810d81ea4737
+  path: data/features/sex.csv
+  cache: true
+  metric: false
+  persist: false
+- md5: 4b5047ce440201f4578c4cfad9bc1ffb
+  path: data/features/age.csv
+  cache: true
+  metric: false
+  persist: false
+- md5: 473e55b9e49f58fa8a35c6da95052397
+  path: data/features/weight.csv
+  cache: true
+  metric: false
+  persist: false
+- md5: ebd85e9176e4a28ddd7ece03de817a7a
+  path: data/features/smoker.csv
+  cache: true
+  metric: false
+  persist: false

@@ -1,0 +1,19 @@
+md5: 7c93558fd7a99501efc2843331b88d59
+cmd: Rscript src/training/glmPois.R
+wdir: ..
+deps:
+- md5: b01bc07befcba4658a6535f877322d1d
+  path: data/build/traintest.csv
+- md5: 3c4fba9979238d0654af7d2b115a0c33
+  path: src/training/glmPois.R
+outs:
+- md5: 5a00b2a917727622fcf815841c94fe11
+  path: data/models/glmPois.rds
+  cache: true
+  metric: false
+  persist: false
+- md5: 185906533422d625bf1af46eb4d82d4e
+  path: data/models/auc.txt
+  cache: true
+  metric: false
+  persist: false

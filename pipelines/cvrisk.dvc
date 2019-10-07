@@ -1,0 +1,14 @@
+md5: 69dcae396359f23eb5740aa244c67649
+cmd: Rscript src/features/cvrisk.R
+wdir: ..
+deps:
+- md5: d74467116b83bf06f4b976b81e89d928
+  path: data/stable/historial.csv
+- md5: c0c80ebfcf1c66076b00a743157ecf5e
+  path: src/features/cvrisk.R
+outs:
+- md5: e591763623768d29b9d8ad8d72fa979a
+  path: data/features/cvrisk.csv
+  cache: true
+  metric: false
+  persist: false

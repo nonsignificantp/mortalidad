@@ -1,0 +1,14 @@
+md5: 3b27c3a28f6707af48ad7f90c847fd72
+cmd: Rscript src/features/polifarmacia.R
+wdir: ..
+deps:
+- md5: 3b79c77365ea8f5b7a88996af5d58308
+  path: data/stable/farmacia.csv
+- md5: 588566caeab946b8ea7111d50e386c4b
+  path: src/features/polifarmacia.R
+outs:
+- md5: 3926df40b8d43bd8fa8ce76c5b367dc5
+  path: data/features/polifarmacia.csv
+  cache: true
+  metric: false
+  persist: false

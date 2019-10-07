@@ -1,0 +1,16 @@
+md5: 020a66773c0d9befcc4e71f8115ab2fa
+cmd: Rscript src/build/traintest.R
+wdir: ..
+deps:
+- md5: 8521dc26acfee5be6ed178e49ea0755f.dir
+  path: data/features
+- md5: d693a9555e8de030ddf245032d55772d
+  path: data/labels/labels.csv
+- md5: ef9c9438e35478d986e3fad299dfa9b9
+  path: src/build/traintest.R
+outs:
+- md5: b01bc07befcba4658a6535f877322d1d
+  path: data/build/traintest.csv
+  cache: true
+  metric: false
+  persist: false

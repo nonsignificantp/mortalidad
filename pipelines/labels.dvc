@@ -1,0 +1,14 @@
+md5: 371fef5e7dd00f17c3ac43ec9a716e06
+cmd: Rscript src/labels/labels.R
+wdir: ..
+deps:
+- md5: 69ea6208096fa6cf36bbf3e84c9a7e32
+  path: data/stable/internacion.csv
+- md5: 3ae6b5adce6bbc056ba284888e945e97
+  path: src/labels/labels.R
+outs:
+- md5: d693a9555e8de030ddf245032d55772d
+  path: data/labels/labels.csv
+  cache: true
+  metric: false
+  persist: false

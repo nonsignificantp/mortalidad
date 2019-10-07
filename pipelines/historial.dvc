@@ -1,0 +1,14 @@
+md5: d721e0ee66953b4975f879e39e1cde6f
+cmd: Rscript src/preprocessing/historial.R
+wdir: ..
+deps:
+- md5: 85a1561ac1178920f47d2d6ceeac03ec
+  path: data/original/hi_historial.csv
+- md5: b0644d6895d8afd1bf40e0cb0e42fe10
+  path: src/preprocessing/historial.R
+outs:
+- md5: d74467116b83bf06f4b976b81e89d928
+  path: data/stable/historial.csv
+  cache: true
+  metric: false
+  persist: false
