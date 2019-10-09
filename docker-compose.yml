@@ -1,0 +1,24 @@
+version: '3.6'
+services:
+        rstudio:
+                build: .
+                container_name: mortalidad_rstudio
+                volumes:
+                        - .:/home/rstudio/dev
+                ports:
+                        - 8787:8787
+                environment:
+                        - PASSWORD=123
+        database:
+                image: mysql:latest
+                container_name: mortalidad_mysql
+                volumes:
+                        - ./data/database:/var/lib/mysql
+                ports:
+                        - 3306:3306
+                environment:
+                        MYSQL_USER: user
+                        MYSQL_PASSWORD: password
+                        MYSQL_ROOT_PASSWORD: password
+                        MYSQL_DATABASE: mortalidad
+                        MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
