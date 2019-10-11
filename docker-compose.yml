@@ -1,24 +1,21 @@
-version: '3.6'
+version: '3'
 services:
-        rstudio:
-                build: .
-                container_name: mortalidad_rstudio
-                volumes:
-                        - .:/home/rstudio/dev
-                ports:
-                        - 8787:8787
-                environment:
-                        - PASSWORD=123
         database:
-                image: mysql:latest
-                container_name: mortalidad_mysql
-                volumes:
-                        - ./data/database:/var/lib/mysql
-                ports:
-                        - 3306:3306
+                image: postgres
+                restart: always
                 environment:
-                        MYSQL_USER: user
-                        MYSQL_PASSWORD: password
-                        MYSQL_ROOT_PASSWORD: password
-                        MYSQL_DATABASE: mortalidad
-                        MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+                        POSTGRES_PASSWORD: postgres
+        jupyter:
+                image: jupyter/datascience-notebook
+                ports:
+                        - 8888:8888
+        pgadmin:
+                image: dpage/pgadmin4
+                depends_on:
+                        - database
+                restart: always
+                ports:
+                        - 80:80
+                environment:
+                        PGADMIN_DEFAULT_PASSWORD: postgres
+                        PGADMIN_DEFAULT_EMAIL: rodriguezagustin@buenosaires.gob.ar
