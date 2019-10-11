@@ -5,10 +5,14 @@ services:
                 restart: always
                 environment:
                         POSTGRES_PASSWORD: postgres
-        jupyter:
-                image: jupyter/datascience-notebook
+        rstudio:
+                image: rocker/verse
                 ports:
-                        - 8888:8888
+                        - 8787:8787
+                volumes:
+                        - .:/home/rstudio/dev
+                environment:
+                        PASSWORD: 123
         pgadmin:
                 image: dpage/pgadmin4
                 depends_on:
