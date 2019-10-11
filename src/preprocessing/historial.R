@@ -5,6 +5,16 @@ library('tidyverse')
 input_historial_csv <- file.path('data', 'original', 'hi_historial.csv')
 historial <- read_csv(input_historial_csv)
 
+# Set connection to database --------------------------------------------------
+
+connection <- DBI::dbConnect(
+  RPostgres::Postgres(), 
+  host = "database",
+  user = "postgres",
+  dbname = 'mortalidad',
+  password = "postgres"
+)
+
 # Cleaning --------------------------------------------------------------------
 
 ## Remove zero imputated values
@@ -14,5 +24,4 @@ historial <- historial %>%
 
 # Save ------------------------------------------------------------------------
 
-output_historial_csv <- file.path('data', 'stable', 'historial.csv')
-write_csv(historial, output_historial_csv)
+copy_to(connection, historial, 'historial', overwrite = T, temporary = F)

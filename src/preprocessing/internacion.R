@@ -5,6 +5,16 @@ library('tidyverse')
 input_internacion_csv <- file.path('data', 'original', 'hi_internacion.csv')
 internacion <- read_csv(input_internacion_csv)
 
+# Set connection to database --------------------------------------------------
+
+connection <- DBI::dbConnect(
+  RPostgres::Postgres(), 
+  host = "database",
+  user = "postgres",
+  dbname = 'mortalidad',
+  password = "postgres"
+)
+
 # Cleaning --------------------------------------------------------------------
 
 ## Remove zero imputated values and impossible patient weights
@@ -15,5 +25,4 @@ internacion <- internacion %>%
 
 # Save ------------------------------------------------------------------------
 
-output_internacion_csv <- file.path('data', 'stable', 'internacion.csv')
-write_csv(internacion, output_internacion_csv)
+copy_to(connection, internacion, 'internacion', overwrite = T, temporary = F)
